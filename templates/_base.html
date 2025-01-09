@@ -10,6 +10,16 @@
     <title>{% block page_title %}{% endblock %}</title>
 </head>
 <body>
+{% if user.is_authenticated %}
+    <span>Hello {{ user.email }}</span> 
+    <form action="{% url 'account_logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">log out</button>
+    </form>
+{% else %}
+    <a href="{% url 'account_login' %}">login</a> | <a href="{% url 'account_signup' %}">signup</a>
+{% endif %}
+
 {% block content %}
 {% endblock %}
 
