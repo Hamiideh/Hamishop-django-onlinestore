@@ -43,14 +43,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #local apps
-    'accounts',
-    'pages',
     #third party apps
     "crispy_forms",
     "crispy_bootstrap5",
     'allauth',
     'allauth.account',
+
+    #local apps
+    'accounts',
+    'pages',
+    'products.apps.ProductsConfig'
 
 ]
 
