@@ -20,6 +20,8 @@ env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# TO TRANSLATION OF TEMPLATE ROOT
+LOCALE_PATHS = ('templates/locale/', )
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -48,6 +50,7 @@ INSTALLED_APPS = [
     "crispy_bootstrap5",
     'allauth',
     'allauth.account',
+    'rosetta',
 
     #local apps
     'accounts',
@@ -135,6 +138,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # LANGUAGE_CODE = 'en-us'
 LANGUAGE_CODE = 'fa'
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian'),
+)
+
 TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True

@@ -4,7 +4,6 @@ from django.shortcuts import get_object_or_404
 from .models import Product, Comment
 from .forms import CommentForm
 
-# Create your views here.
 
 class ProductListView(generic.ListView):
     # model = Product
