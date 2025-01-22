@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'jalali_date',
 
     #third party apps
     "crispy_forms",
@@ -52,11 +54,13 @@ INSTALLED_APPS = [
     'allauth.account',
     'rosetta',
 
+
     #local apps
     'accounts',
     'pages',
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
+    'persian_translate',
 
 ]
 
@@ -179,9 +183,9 @@ LOGOUT_REDIRECT_URL = 'home'
 # all auth setting
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
 ACCOUNT_UNIQUE_EMAIL = True
 
 #crispy form config

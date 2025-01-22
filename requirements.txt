@@ -13,6 +13,8 @@ django-crispy-forms==2.3
 django-rosetta==0.10.1
 environs==14.0.0
 idna==3.10
+jalali_core==1.0.0
+jdatetime==5.1.0
 marshmallow==3.24.1
 oauthlib==3.2.2
 packaging==24.2
