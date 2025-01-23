@@ -7,14 +7,15 @@ from django.utils.translation import gettext_lazy as _
 from ckeditor.fields import RichTextField
 
 class Product(models.Model):
-    title = models.CharField(max_length=100)
-    description = RichTextField()
-    price = models.PositiveIntegerField(default=0)
-    active = models.BooleanField(default=True)
+    title = models.CharField(verbose_name=_("title"), max_length=100)
+    description = RichTextField(verbose_name=_("description"))
+    short_description = RichTextField(verbose_name=_("short_description"),blank=True)
+    price = models.PositiveIntegerField(verbose_name=_("price"),default=0)
+    active = models.BooleanField(verbose_name=_("active"),default=True)
     image = models.ImageField(verbose_name=_("Product image"), upload_to='product/product_cover/', blank=True, )
 
     datetime_created = models.DateTimeField(default=timezone.now, verbose_name=_("Date Time of Creation"))
-    date_modified = models.DateTimeField(auto_now=True)
+    date_modified = models.DateTimeField(auto_now=True, verbose_name=_("Date Time of Modified"))
 
 
     def __str__(self):
