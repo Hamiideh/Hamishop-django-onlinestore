@@ -1,15 +1,16 @@
 from django.contrib.auth import get_user_model
+from django.db.models import TextField
 from django.utils import timezone
 from django.db import models
 from django.shortcuts import reverse
 from django.utils.translation import gettext_lazy as _
 
-from ckeditor.fields import RichTextField
+
 
 class Product(models.Model):
     title = models.CharField(verbose_name=_("title"), max_length=100)
-    description = RichTextField(verbose_name=_("description"))
-    short_description = RichTextField(verbose_name=_("short_description"),blank=True)
+    description = TextField(verbose_name=_("description"))
+    short_description = TextField(verbose_name=_("short_description"),blank=True)
     price = models.PositiveIntegerField(verbose_name=_("price"),default=0)
     active = models.BooleanField(verbose_name=_("active"),default=True)
     image = models.ImageField(verbose_name=_("Product image"), upload_to='product/product_cover/', blank=True, )
