@@ -34,6 +34,8 @@ DEBUG = env.bool("DJANGO_DEBUG")
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
 
+# Payment Gateway
+# MERCHANT_ID = env("DJANGO-MERCHANT_ID")
 
 # Application definition
 
